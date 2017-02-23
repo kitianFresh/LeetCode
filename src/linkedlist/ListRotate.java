@@ -10,21 +10,92 @@ public class ListRotate {
 			temp = temp.next;
 		}
 		ListNode pNode = head;
-		for (;pNode!=null;) {
-			System.out.print(pNode.val + " ");
-			pNode = pNode.next;
-		}
+		
 		ListRotate s = new ListRotate();
-		s.printList(s.rotateRight1(head, 2));
+		ListNode.printList(head);
+		ListNode.printList(s.reverseKGroup1(head, 3));
 		
 	}
-	public void printList(ListNode head) {
-		ListNode pNode = head;
-		for (;pNode!=null;) {
-			System.out.print(pNode.val + " ");
-			pNode = pNode.next;
-		}
-	}
+	public ListNode reverseKGroup1(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
+        ListNode dumby = new ListNode(0);
+        dumby.next = null;
+        
+        ListNode dumbyHead = new ListNode(0);
+        dumbyHead.next = null;
+        
+        ListNode pNode = head;
+        // 先遍历一遍求长度
+        int len = 0;
+        for (;pNode != null;) {
+        	len ++;
+        	pNode = pNode.next;
+        }
+        ListNode.printList(head);
+        pNode = head;
+        ListNode pTemp;
+        for (int i=0;pNode!=null;) {
+        	// 判断是否是最后一段不足 k 个, 就不需要逆序了
+            if ((len-i) < k) {
+                break;
+            }
+            pTemp = pNode;
+            pTemp.next = dumby.next;
+            dumby.next = pTemp;
+            i ++;
+            // 记住第一段节点的头，以后不再改变了
+            if (i <= k && i % k == 0) {
+                dumbyHead.next = dumby.next;
+                ListNode.printList(dumbyHead.next);
+            }
+            
+            // 后续的头插法需要不断的更换新的冗余头节点，即每一组的最后一个节点
+            if (i > k && i % k == 0) {
+                dumby = pNode;
+            }
+            pNode = pNode.next;        
+        }     
+		return dumbyHead.next;
+    }
+	
+	public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || head.next == null) return head;
+        ListNode dumby = new ListNode(0);
+        dumby.next = null;
+        
+        ListNode node = null;
+        ListNode pNode = head;
+        ListNode pTemp;
+        int i;
+        for (i=0;pNode!=null;) {
+            pTemp = pNode;
+            pNode = pNode.next;
+            pTemp.next = dumby.next;
+            dumby.next = pTemp;
+            i ++;
+            
+            if (i % k == 0) {
+                node = reverseKGroup(pNode, k);
+                break;
+            }
+        }
+        // 如果 i 是 小于 k 的， 说明这一部分不应该逆序，再逆序回去
+        if (i < k) {
+        	// pNode = head; // 严重错误的写法，此时的head 是以前 所指向的 head， 现在他已经在尾部了，现在的头部是 dumby.next;
+        	pNode = dumby.next;
+        	dumby.next = null;
+            for (;pNode != null;) {
+            	 pTemp = pNode;
+                 pNode = pNode.next; // 先走，不然会被修改
+                 pTemp.next = dumby.next;
+                 dumby.next = pTemp;
+            }
+            return dumby.next;
+        }
+        // 尾巴指向 后面 reverseKGroup 返回的结果
+        head.next = node; 
+        return dumby.next;
+    }
     public ListNode rotateRight(ListNode head, int k) {
         if (k < 0) {
             throw new IllegalArgumentException();

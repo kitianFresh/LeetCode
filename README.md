@@ -1,7 +1,14 @@
 # LeetCode
 Code Algorithms
 
-
+## Segment Tree
+ - [Largest Rectangular Area in a Histogram | Set 1](http://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/)
+ - [Largest Rectangular Area in a Histogram | Set 2](http://www.geeksforgeeks.org/largest-rectangle-under-histogram/)
+ - [Segment tree with single element modifications](http://codeforces.com/blog/entry/18051?)
+ - [Classic Segment Tree](http://codeforces.com/blog/entry/15890)
+ - [夜深人静写算法（7）：线段树](http://blog.jobbole.com/98591/)
+ - [数据结构之线段树](http://dongxicheng.org/structure/segment-tree/)
+ - [线段树和树状数组](http://poj.org/summerschool/1_interval_tree.pdf)
 
 Linux文件转码工具
 ```
