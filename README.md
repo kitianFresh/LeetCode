@@ -9,7 +9,10 @@ Code Algorithms
  - [夜深人静写算法（7）：线段树](http://blog.jobbole.com/98591/)
  - [数据结构之线段树](http://dongxicheng.org/structure/segment-tree/)
  - [线段树和树状数组](http://poj.org/summerschool/1_interval_tree.pdf)
-
+ 
+## Increasing Stack
+ - [maximize-the-rectangular-area-under-histogram](http://stackoverflow.com/questions/4311694/maximize-the-rectangular-area-under-histogram)
+ - [Judges' Comments on the Problems and their Solutions](http://www.informatik.uni-ulm.de/acm/Locals/2003/html/judge.html)
 Linux文件转码工具
 ```
 $ sudo apt-get install enca
