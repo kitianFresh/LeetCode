@@ -45,11 +45,19 @@ find(7) -> false
 ```
  - [4sum](https://leetcode.com/problems/4sum/?tab=Description)
  - [4sum-ii](https://leetcode.com/problems/4sum-ii/?tab=Description)
- 
+ - [k-sum-general(DFS)](https://huntzhan.org/k-sum-xi-lie-yu-combination-xi-lie/)
+ - [k-sum-only-distinct-positive-integer(dp)](http://www.lintcode.com/en/problem/k-sum/)
+
+combination
+ - [39. Combination Sum](https://leetcode.com/problems/combination-sum/?tab=Description)
+ - [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/?tab=Description)
+ - [216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii/?tab=Description)
 ### 参考答案
  - [Two Sum系列 Leetcode解题记录](https://segmentfault.com/a/1190000006697526)
  - [K Sum 系列与 Combination 系列](https://huntzhan.org/k-sum-xi-lie-yu-combination-xi-lie/)
  
+## Tree
+ - [Print all k-sum paths in a binary tree](http://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/)
  
 Linux文件转码工具
 ```

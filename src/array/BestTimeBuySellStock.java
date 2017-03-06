@@ -27,5 +27,4 @@ public class BestTimeBuySellStock {
         return maxSubArray(diffs);
     }
     
-    
 }

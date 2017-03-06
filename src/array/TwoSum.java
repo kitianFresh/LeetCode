@@ -10,15 +10,98 @@ import java.util.Map;
 public class TwoSum {
 	public static void main(String[] args) {
 		TwoSum ts = new TwoSum();
-		int[] nums = {2, 7, 11, 15};
-		int[] res =  ts.twoSum1(new int[]{1}, 18);
-		for (int i : res) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
+		int[] nums = {1,4,6,8,10,13,15,17,18,21,23,26,27,28,29,30,32,35,36};
+	
+		System.out.println(ts.kSum(nums, 9, 133));
+		System.out.println(ts.kSumPositive(nums, 9, 133));
 	}
 	
+	/**
+	 * 动态规划可以用来解一些NP完全问题，但是前提是 target不是很大，如果 target >> A.length 和 k,那么空间复杂度很高
+	 * 空间换时间，动态规划的思想关键就是找出 dp 保存的是什么内容，一般根据问题的性质变量和最终求解结果来设计 dp； 
+	 * 本题为了求得 k 个数(变量1)的和为 target(变量2)的方案数(求解目标)。问题规模 n 也是变量(变量0)
+	 * 因此可以使用 dp[i][j][t] 来表示前 i 个数中挑出 j 个数使其和为 t 的方案数！表示完问题表达形式之后，就需要寻找问题规模之间的关系，
+	 * 即 前 i 个数 和 前 i-1 个数之间有什么样的递推关系。 根据互斥且完备划分原则，当扫描到第 i 个数时，取j个数的和 t 分两种情况，
+	 * 包含 A[i] 或者 不包含 A[i],包含 A[i] 就是问题变为 dp[i-1][j-1][t-A[i]] 即从前 i-1 个数中取 j-1 个数的和为 t-A[i]。
+	 * 不包含就是 dp[i-1][j][t], 最后求得递推 dp[i][j][t] = dp[i-1][j-1][t-A[i]] + dp[i-1][j][t]; （其中当且仅当t>=A[i]才有前一项）
+	 * 特殊情况 dp[?][0][0] = 1;表示取0个数和为0，只有一种方案，即不取；
+	 */
+	public int kSumPositive(int[] A, int k, int target) {
+		if (A == null || A.length == 0) return 0;
+		int n = A.length;
+		int[][][] dp = new int[n+1][k+1][target+1];
+		for (int i=0;i<n+1;i++) {
+			dp[i][0][0] = 1;
+		}
+		for(int i=1;i<n+1;i++) {
+			for (int j=1;j<i+1&&j<k+1;j++) {
+				for (int t=1;t<target+1;t++) {
+					dp[i][j][t] = 0;
+					// 只有 t 大于等于 当前 A[i-1],才说明有可能把 A[i-1] 包含进去 
+					if (t >= A[i-1]) { // dp 的下标从 1 开始对应 A 的第一个元素，由于 A 索引从 0 开始，因此 i-1
+						dp[i][j][t] = dp[i-1][j-1][t-A[i-1]];
+					}
+					dp[i][j][t] += dp[i-1][j][t];
+				}// for t
+			}// for j
+		}// for i
+		return dp[n][k][target];
+	}
+	
+	/**
+     * @param A: an integer array.
+     * @param k: a positive integer (k <= length(A))
+     * @param target: a integer
+     * @return an integer
+     */
+    public int kSum(int A[], int k, int target) {
+        if (A == null || A.length == 0) return 0;
+    	Arrays.sort(A);
+    	return kSumSorted(A, 0, A.length-1, k, target);
+    }
+    
+    public int kSumSorted(int A[], int l, int r, int k, int target) {
+        int newTarget, i, count=0;
+        int left,right;
+        left = l;
+        right = r;
+        if (k == 1) {
+            for (i=l;i<=r;i++) {
+                if (A[i] == target) {
+                    count ++;
+                }
+            }
+            return count;
+        }
+        //DFS递归终止
+        if (k == 2) {
+            while(left<right) {
+                if (A[left]+A[right] == target) {
+                    count ++;
+                    while (left < right && A[left] == A[left+1]) left ++;
+                    while (left < right && A[right] == A[right-1]) right --;
+                    left ++;
+                    right --;
+                }
+                else if (A[left]+A[right]>target) {
+                    right --; 
+                }
+                else {
+                    left ++;
+                }
+            }
+            return count;
+        }
+        //DFS
+        for (i=l;i<=r-k+1;i++) {
+            newTarget = target - A[i];
+            count += kSumSorted(A, i+1, r, k-1, newTarget);
+            while (i<=r-k && A[i] == A[i+1]) i++;
+        }
+        return count;
+    }
+    
+    
 	// O(n^2) 暴力求解
 	public int[] twoSum(int[] nums, int target) {
         if (nums == null || nums.length < 2) return null;
@@ -48,7 +131,7 @@ public class TwoSum {
 		return null;
 	}
 	
-	// Two Pointers O(n)
+	// Two Pointers O(n) But must sorted
 	public int[] twoSumSorted(int[] numbers, int target) {
 		if (numbers == null || numbers.length == 1)  return null;
         int i,j,sum;
@@ -180,4 +263,6 @@ public class TwoSum {
     	
         return count;
     }
+    
+    
 }

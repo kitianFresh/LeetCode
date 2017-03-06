@@ -11,4 +11,18 @@ public class ListNode {
 		}
 		System.out.println();
 	}
+	
+	public static ListNode constructTailStyleByArray(int[] arr) {
+		
+		if (arr == null || arr.length == 0) return null;
+		ListNode dummy = new ListNode(1);
+		ListNode tail = dummy;
+		for (int i=0; i<arr.length; i++) {
+			ListNode node = new ListNode(arr[i]);
+			tail.next = node;
+			tail = tail.next;
+		}
+		return dummy.next;
+		
+	}
 }
