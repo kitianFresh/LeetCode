@@ -390,7 +390,7 @@ static tDataNode head[] =
 */
 //非递归实现，仔细观察发现，重排序的链表其实是由 1 2 3 4 5 和 10 9 8 7 6 两个链表交叉合并的结果，因此只要找到中点位置，然后将后半部分逆序，然后再交叉合并即可！
 ```
-以上问题的源代码见[ListRotate.java](./ListRotate.java)
+以上问题的源代码见[ListRotate.java](./ListRotate.java) 和 [EvenOdd.java](./EvenOdd.java)
 
 ## 链表合并
  - [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/?tab=Description)
