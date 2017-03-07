@@ -7,22 +7,21 @@
 数组和链表都可以采用动态申请和静态申明的方式申请空间。你会惊讶链表也可以通过静态申明组织起来吗？
  - 数组的动态申请和静态申明：
    * C/C++
-```C++
-// 动态申请（堆中）
-int *p = (*int)malloc(sizeof(int)*9);
+    ```C++
+    // 动态申请（堆中）
+    int *p = (*int)malloc(sizeof(int)*9);
 
-// 静态申明（栈中）
-int[] array = {1,2,3,4,5,6,7,8,9};
-```
-   * Java
-```java
-// 动态申请（堆中）
-int[] array = new int[9];
+    // 静态申明（栈中）
+    int[] array = {1,2,3,4,5,6,7,8,9};
+    ```
+    * Java
+    ```java
+    // 动态申请（堆中）
+    int[] array = new int[9];
 
-// 静态申明（栈中）
-int[] array = {1,2,3,4,5,6,7,8,9};
-
-```
+    // 静态申明（栈中）
+    int[] array = {1,2,3,4,5,6,7,8,9};
+    ```
 
  - 链表的动态申请：
    * C/C++
@@ -68,7 +67,7 @@ static tDataNode head[] =
     {"rocket",  "print a really bad Easter egg",cmd_rocket, NULL}
 };
 ```
-不过这个数组链表式的数据结构需要你了解编译器的工作原理要不然你压根想不到还可以这样写C语言代码！ 其实就是先声明一个链表结构的结构体，然后再以静态方式申明一个该结构体数组，数组元素的next成员都以字面形式链接到下一个元素，这样不就是数组+链表了么！你既可以按数组方式head[i]存取，也可以按照链表方式p->next存取；
+其实就是先声明一个链表结构的结构体，然后再以静态方式申明一个该结构体数组，数组元素的next成员都以字面形式链接到下一个元素，这样不就是数组+链表了么！你既可以按数组方式head[i]存取，也可以按照链表方式p->next存取；
 
 直接静态的把这个链表建立起来！！重要的是你知道你的下一个节点的地址就行，静态情况下可以通过数组索引方式可以获得地址，然后就链接起来了！虽然这个数据会在编译之后就存在而非动态创建，会增大二进制文件数据的大小，但是对代码的可读性和可维护性来说值得，而且如果提前已经知道这块内存不论如何都是要占用的，这样做会更加高效，因为动态申请还会降低速度。
 
@@ -122,6 +121,8 @@ static tDataNode head[] =
 	}
 
 ```
+### 链表找环问题系列
+
 
 ## 链表删除
  - [237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/?tab=Description)
@@ -132,7 +133,7 @@ static tDataNode head[] =
 
 经典的链表删除问题，一个就是删除链表的一个节点至少需要多少个指针？要回答这个问题，就需要知道具体是什么类型的删除操作！
 ### 根据内容删除
- - **如果是根据节点的data内容删除，那么必须要使用至少两个指针，一个是当前指针，一个是前驱指针！**
+**如果是根据节点的data内容删除，那么必须要使用至少两个指针，一个是当前指针，一个是前驱指针！**
 ```java
 	public ListNode removeElements(ListNode head, int val) {
         if (head == null) return head;
@@ -189,7 +190,7 @@ static tDataNode head[] =
 
 首节点一定不会被删除，因此可以不使用冗余节点
 ```java
-	public ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode pNode = head;
         while (pNode!=null && pNode.next!=null) {
@@ -206,7 +207,7 @@ static tDataNode head[] =
 
 首节点有可能被删除的，所以使用冗余节点更方便，另外此题相等往前一直跳很重要，可以跳过，就相当于删除了，其他写法很麻烦
 ```java
-	public ListNode deleteDuplicates(ListNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode dummy = new ListNode(-1); // 因为链表首节点有可能被删除，因此加入冗余节点，方便操作
         dummy.next = head;
@@ -242,8 +243,8 @@ static tDataNode head[] =
 
 经典头插法就地逆序，一般会使用一个多余的空头，这样写起来更方便，不用判断是不是头结点，从而会导致代码做特殊处理，但是在Java中申请heap空间是耗费时间的
 ```java
-	public ListNode reverseList(ListNode head) {
-		if (head == null || head.next == null) return head;
+    public ListNode reverseList(ListNode head) {
+	    if (head == null || head.next == null) return head;
         ListNode dummby = new ListNode(0);
         dummby.next = null;
         ListNode pNode = head;
@@ -536,5 +537,51 @@ static tDataNode head[] =
 
 ## 基于链表数据结构排序
 
+### 插入排序
+** 比较难写正确，虽然和数组的插入排序思想一样，由于不能从后往前比较，只能每次都从头开始比，很容易指错节点，为了防止从头比较的指针超过当前节点，采用提前判断的写法，即 p.next.val < pNode.val; 这样 p 就无法到达 pNode 了。 **
+```java
+	public ListNode insertionSortList(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
 
+		// 首节点可能会动，因此添加冗余节点
+		ListNode dummy = new ListNode(-1);
+		dummy.next = null;
+		ListNode p, next, pNode;
+		pNode = head;
+		while (pNode != null) {
+			next = pNode.next; // pNode 前进 不要放在最后
+			p = dummy;
+			// 采用 p.next 和 pNode 提前比较，就不会让 p 到达 pNode 了
+			while (p.next != null && p.next.val < pNode.val) {
+				p = p.next;
+			}
+
+			// 将pNode插入到 p 的前一个位置
+			pNode.next = p.next;
+			p.next = pNode;
+
+			pNode = next;
+
+		}
+		return dummy.next;
+	}
+```
+### 归并排序
+实现 O(nlgn) 的复杂度，比较简单，思路和数组归并排序一样，找到中点，拆分成左右两个子问题，然后合并！
+```java
+	// O(nlgn) 给链表排序，归并或者快速排序，这里采用归并
+	public ListNode sortList(ListNode head) {
+		if (head == null || head.next == null)
+			return head;
+		ListNode pNode = findMid(head);
+		ListNode left;
+		ListNode right;
+
+		right = sortList(pNode.next);
+		pNode.next = null;
+		left = sortList(head);
+		return mergeSortedLists(left, right);
+	}
+```
 

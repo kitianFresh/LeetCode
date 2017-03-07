@@ -62,7 +62,6 @@ public class SortLinkList {
 		pNode.next = null;
 		left = sortList(head);
 		return mergeSortedLists(left, right);
-
 	}
 
 	public ListNode mergeSortedLists(ListNode headA, ListNode headB) {
