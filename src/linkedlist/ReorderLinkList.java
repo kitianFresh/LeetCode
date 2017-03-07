@@ -16,7 +16,6 @@ public class ReorderLinkList {
 		r.reorderList(h);
 		ListNode.printList(h);
 	}
-
 	// 递归版本，当问题规模变大时，时间过长，而且可能会产生栈溢出
 	public void reorderList(ListNode head) {
         if (head == null || head.next == null || head.next.next == null) return;

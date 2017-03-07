@@ -82,6 +82,11 @@ static tDataNode head[] =
 **单向不循环链表因其结构的特殊性**，对他进行操作有很多限制，比如**无法根据当前节点找到前驱，只能找到后继**。我把 链表的第一个元素节点称为 首节点， 而空头我把他称为 冗余头结点。
 ## 链表遍历查找
 这是一个基础性问题，因为往往删除，修改，插入之前都是先涉及查找的，因此先来讲解查找问题。
+ - [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/?tab=Description)
+ - [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/?tab=Description)
+ - [141. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/?tab=Description)
+ - [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/?tab=Description)
+
 ### 链表找中点和倒数第K个点
 我们很容易想到，遍历这个链表一次，求其总长度n，然后再从头开始遍历到你 n/2 的位置即可！但是如果不求长度呢？这里就要使用**经典的双指针的异步同速版本用于找到倒数第K个节点，也可以使用另一个版本是双指针的同步异速版本（用于找环儿)。**
 ```java

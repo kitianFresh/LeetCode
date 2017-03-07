@@ -136,5 +136,4 @@ public class MergeKList {
 		left = sortList(head);
 		return mergeSortedLists(left, right);
 	}
-
 }

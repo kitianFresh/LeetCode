@@ -76,8 +76,7 @@ public class AddTwoNumber {
         if (carry == 1) {
             tail.next = new ListNode(carry);
             tail.next.next = null;
-        }
-        
+        }   
         return dummby.next;
     }
 }

@@ -16,7 +16,6 @@ public class NodeRemove {
 		NodeRemove nr = new NodeRemove();
 
 	}
-
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		if (head == null)
 			return head;

@@ -49,6 +49,7 @@ public class ListRotate {
         pNode.next = null;
         return head;
     }
+    
     // 双指针法，时间差，这个版本虽然不用求链表长度，但是对k是有要求的，如果 k >> len, 那么反而会很慢；除非 k < len, 那么会更加高效；
     public ListNode rotateRight1(ListNode head, int k) {
     	if (k < 0) {

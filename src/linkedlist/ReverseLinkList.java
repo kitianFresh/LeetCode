@@ -25,7 +25,6 @@ public class ReverseLinkList {
 		ListNode.printList(r.reverseKGroup1(head, 3));
 
 	}
-
 	public ListNode reverseKGroup1(ListNode head, int k) {
 		if (head == null || head.next == null)
 			return head;
