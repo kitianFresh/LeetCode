@@ -47,6 +47,7 @@ public class CopyLinkedList {
 	
 	
 	//138. Copy List with Random Pointer
+	// O(n)时间，O(n)空间
 	public RandomListNode copyRandomList(RandomListNode head) {
 		if (head == null)
 			return head;
@@ -83,4 +84,6 @@ public class CopyLinkedList {
 
 		return dummy.next;
 	}
+	
+	// O(n) 时间，O(1)空间
 }

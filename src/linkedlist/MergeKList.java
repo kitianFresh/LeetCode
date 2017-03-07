@@ -83,57 +83,14 @@ public class MergeKList {
 		}
 	}
 
-	public ListNode reverseKGroup(ListNode head, int k) {
-		if (head == null || head.next == null)
-			return head;
-		ListNode dumby = new ListNode(0);
-		dumby.next = null;
-
-		ListNode dumbyHead = new ListNode(0);
-		dumbyHead.next = null;
-
-		ListNode pNode = head;
-		// 先遍历一遍求长度
-		int len = 0;
-		for (; pNode != null;) {
-			len++;
-			pNode = pNode.next;
-		}
-		pNode = head;
-		ListNode pTemp;
-		for (int i = 0; pNode != null;) {
-			// 判断是否是最后一段不足 k 个, 就不需要逆序了
-			if ((len - i) < k) {
-				break;
-			}
-			pTemp = pNode;
-			pTemp.next = dumby.next;
-			dumby.next = pTemp;
-			i++;
-			// 记住第一段节点的头，以后不再改变了
-			if (i <= k && i % k == 0) {
-				dumbyHead.next = dumby.next;
-			}
-
-			// 后续的头插法需要不断的更换新的冗余头节点，即每一组的最后一个节点
-			if (i > k && i % k == 0) {
-				dumby = pNode;
-			}
-			pNode = pNode.next;
-		}
-
-		return dumbyHead.next;
-	}
-
 	public ListNode mergeSortedLists(ListNode headA, ListNode headB) {
 		if (headA == null || headB == null)
 			return headA == null ? headB : headA;
 		ListNode dummy = new ListNode(-1);
 		dummy.next = null;
 		ListNode tail = dummy;
-		ListNode bound = new ListNode(Integer.MAX_VALUE); // 利用 bound
-															// 最大界，让代码更加compact
-															// elegant;见算法导论
+		ListNode bound = new ListNode(Integer.MAX_VALUE); 
+		// 利用 bound最大界，让代码更加compact & elegant;见算法导论
 		while (headA != bound && headB != bound) {
 
 			headA = (headA == null ? bound : headA);
