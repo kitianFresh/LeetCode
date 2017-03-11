@@ -36,3 +36,14 @@ System.out.println(citiesCommaSeparated);
 ## Binary Search Tree(BST)
  - [>_<501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/?tab=Solutions)
  - [230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/?tab=Description)
+ - [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/?tab=Description)
+ 
+## Binary Tree Height & Width & Level Order
+ - [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/?tab=Description)
+ - [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/?tab=Description)
+ - [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/?tab=Description)
+ - [binary-tree-vertical-order-traversal](https://leetcode.com/problems/binary-tree-vertical-order-traversal/)
+ - [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/?tab=Description)
+ - [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/?tab=Description)
+ - [110. Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/?tab=Description)
+
