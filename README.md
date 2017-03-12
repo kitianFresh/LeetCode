@@ -87,3 +87,4 @@ sudo apt-get autoremove gnome-software
  - [Reinstall or Fix Broken Packages in Linux Ubuntu 15.04 or Ubuntu 14.04](http://sourcedigit.com/16797-reinstall-or-fix-broken-packages-in-linux-ubuntu-15-04-or-ubuntu-14-04/)
  - [Repairing a badly damaged package system in Ubuntu](http://mergy.org/2013/03/repairing-a-badly-damaged-package-system-in-ubuntu/)
  - [PackageManagerTroubleshootingProcedure](https://help.ubuntu.com/community/PackageManagerTroubleshootingProcedure)
+
