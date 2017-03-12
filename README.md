@@ -59,7 +59,7 @@ combination
 ## Tree
  - [Print all k-sum paths in a binary tree](http://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/)
  
-Linux文件转码工具
+# Linux文件转码工具
 ```
 $ sudo apt-get install enca
 $ enca -L zh_CN ListNode.java 
@@ -74,7 +74,7 @@ Universal transformation format 8 bits; UTF-8
 
 ```
 
-Ubuntu package manager broken & gnome-software 100% cpu
+# Ubuntu package manager broken & gnome-software 100% cpu
 
 ```
 sudo rm /var/lib/apt/lists/lock
@@ -88,3 +88,5 @@ sudo apt-get autoremove gnome-software
  - [Repairing a badly damaged package system in Ubuntu](http://mergy.org/2013/03/repairing-a-badly-damaged-package-system-in-ubuntu/)
  - [PackageManagerTroubleshootingProcedure](https://help.ubuntu.com/community/PackageManagerTroubleshootingProcedure)
 
+# Eclipse突然连接不上git
+重新加载原来的RSA到eclipse SSH2 Home,然后重启还是不能解决，以前用的好好的，突然就不能用了，然后发现原来是走代理导致的，代理突然无法解析 github.com 网站，导致 eclipse EGIT不能使用，既不是公钥问题，也不是协议设置问题，以前设置了 eclipse network 的代理，现在修改成直接连接了
