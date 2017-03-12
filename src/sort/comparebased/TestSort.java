@@ -79,5 +79,16 @@ public class TestSort {
 		Util.display(A);
 	}
 	
+	@Test
+	public void testMergeSort() {
+		System.out.println("----------MergeSort--------");
+		int[] A = new int[]{4,1,3,0,9,2,6,8,7,5};
+		
+		System.out.println(A.length);
+		Util.display(A);
+		ShellSort.shellSort(A, 3);
+		Util.display(A);
+	}
+	
 
 }
