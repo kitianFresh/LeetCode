@@ -62,6 +62,8 @@ public class MaxSubArray {
         }
         return max;
     }
+	
+	
 	// 大多数dp问题，如果不需要借助中间结果进行回溯，其实都可以对空间进行优化操作，例如这里直接将空间复杂度从 O(n) 降低到 O(1),时间复杂度 O(n) 不变；
 	public int maxSubArrayDpOptimal(int[] nums) {
 		int dp, max = nums[0];
@@ -74,8 +76,10 @@ public class MaxSubArray {
 	}
 	
 	// dp 编程，时间复杂度 O(n), 空间复杂度 O(n), 
-	// 寻找问题规模为 n 和 n-1 之间的联系，并不一定要存储最大值，而是要存储以end为右边界的子数组的和，然后比较大小即可，因为最大子数组一定是以某一个end为右边界！
-	// 得到递推公式；dp[end] = dp[end-1]>0?dp[end]:0 + array[end];如果要返回最大子数组的左右边界，我们需要在求出右边界后保存，然后再从改右边界向前遍历即可
+	// 寻找问题规模为 n 和 n-1 之间的联系，并不一定要存储最大值，这里DP的递推公式下标选择标准是end，即存储以end为右边界的子数组的和，
+	// 然后比较大小即可，因为最大子数组一定是以某一个end为右边界！，基于这个事实，我们就可以得到递推公式；
+	// dp[end] = (dp[end-1]>0?dp[end-1]:0) + array[end];
+	// 如果要返回最大子数组的左右边界，我们需要在求出右边界后保存，然后再从该右边界向前遍历即可
 	public int maxSubArrayDp(int[] nums) {
 		if (nums == null || nums.length == 0) return 0;
 		int end = nums.length - 1;
@@ -88,7 +92,7 @@ public class MaxSubArray {
 		return max;
 	}
 	
-	// 均匀分治法，时间复杂度 O(nlogn),递归压栈的空间复杂度 O(clgn) 。可以很容易保存最大子数组的左右边界。最大子数组三种可能： left half，right half，mid included.
+	// 均匀分治法，时间复杂度 O(nlgn),递归压栈的空间复杂度 O(clgn) 。可以很容易保存最大子数组的左右边界。最大子数组三种可能： left half，right half，mid included.
 	// 算法主要是合并过程，需要找出mid included 的最大子数组，此时问题又可以分成左右两部分，然后求和！ T(n) = 2T(n/2)+O(n)
 	public int maxSubArray(int[] array, int start, int end) {
         if (array == null || array.length == 0 || start > end) return 0;

@@ -43,7 +43,7 @@ public class NPC {
 		return isSubSetSum(A, end-1, target-A[end]) || isSubSetSum(A, end-1, target);
 	}
 	
-	// DP, 对于含有负数的数组是不适用的！
+	// DP, 对于含有负数的数组是不适用的！这里和最大连续数组和一样，只是这里我们不一定要规定是最右端点，原问题可以拆分为子问题包含和不包含，递推公式：
 	// dp[i][t] = dp[i-1][t] || dp[i-1][t-A[i-1]]; 如果不只是返回最终是否存在，而是当存在的时候至少返回这几个数，该如何？ backtracing
 	// Backtracking | Set 4 (Subset Sum)
 	public boolean isSubSetSumDP(int[] A, int target) {

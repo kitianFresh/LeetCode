@@ -21,6 +21,10 @@ String citiesCommaSeparated = cities.stream().map(Object::toString)
 System.out.println(citiesCommaSeparated);
 ```
 
+47
+-41 -5 -10 -31 -44 -16 -3 -33 -34 -35 -44 -44 -25 -48 -16 -32 -37 -8 -33 -30 -6 -18 -26 -37 -40 -30 -50 -32 -5 -41 -32 -12 -33 -22 -14 -34 -1 -41 -45 -8 -39 -27 -23 -45 -10 -50 -34
+	6 3
+
 ## pathSum
  - [*257. Binary Tree Paths*](https://leetcode.com/problems/binary-tree-paths/?tab=Description)
  - [112. Path Sum](https://leetcode.com/problems/path-sum/?tab=Description)

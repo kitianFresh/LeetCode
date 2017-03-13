@@ -59,6 +59,31 @@ public class TreePath {
 		return paths;
 	}
 	
+	//pathSumII 深度优先的解法，采用先序遍历，到达叶子的时候判断是否是符合的sum，最后每次出栈moving up to parent 必须先讲节点弹出list
+	public List<List<Integer>> pathSumII1(TreeNode root, int sum) {
+		LinkedList<Integer> path = new LinkedList<Integer>();
+		List<List<Integer>> paths = new LinkedList<List<Integer>>();
+		pathSumIIDFS(root, sum, path, paths);
+		return paths;
+	}
+	public void pathSumIIDFS(TreeNode root, int sum, LinkedList<Integer> path, List<List<Integer>> paths) {
+		if (root == null) return;
+		path.add(root.val);
+		if (root.left != null) {
+			pathSumIIDFS(root.left, sum-root.val, path, paths);
+		}
+		if (root.right != null) {
+			pathSumIIDFS(root.right, sum-root.val, path, paths);
+		}
+		if (root.left == null && root.right == null) {
+			if (root.val == sum) {
+				List<Integer> list = new LinkedList<Integer>(path);
+				paths.add(list);
+			}
+		}
+		path.removeLast();
+	}
+	
 	public List<List<Integer>> pathSumII(TreeNode root, int sum) {
 		List<List<Integer>> paths = new ArrayList<List<Integer>>();
 		if (root == null) return paths;
