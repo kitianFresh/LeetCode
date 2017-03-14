@@ -35,6 +35,7 @@ System.out.println(citiesCommaSeparated);
  
 ## 
  - [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/?tab=Description)
+ - [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/#/description)
  
 ## Binary Search Tree(BST)
  - [>_<501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/?tab=Solutions)
@@ -42,9 +43,9 @@ System.out.println(citiesCommaSeparated);
  - [450. Delete Node in a BST未做](https://leetcode.com/problems/delete-node-in-a-bst/?tab=Description)
  
 ## Binary Tree Height & Width & Level Order
- - [102. Binary Tree Level Order Traversal未做](https://leetcode.com/problems/binary-tree-level-order-traversal/?tab=Description)
- - [107. Binary Tree Level Order Traversal II未做](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/?tab=Description)
- - [103. Binary Tree Zigzag Level Order Traversal未做](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/?tab=Description)
+ - [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/?tab=Description)
+ - [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/?tab=Description)
+ - [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/?tab=Description)
  - [binary-tree-vertical-order-traversal未做](https://leetcode.com/problems/binary-tree-vertical-order-traversal/)
  - [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/?tab=Description)
  - [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/?tab=Description)
