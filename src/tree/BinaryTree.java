@@ -20,7 +20,25 @@ public class BinaryTree {
 		root.right = buildBTreeByPerfectArray(list, 2*i+2);
 		return root;
 	}
-	
+	public int findIndex(int[] a, int s, int e, int key) {
+        for (int i=s; i<=e; i++) {
+            if (key == a[i]) return i;
+        }
+        return -1;
+    }
+    // 分治法根据先序遍历首元素为根，而中序遍历根能够把左右子树分开，可以分解为 左子树和 右子树 的建立的子问题！
+    public TreeNode build(int[] preorder, int ps, int pe, int[] inorder, int is, int ie) {
+        if (ps > pe || is > ie) return null;
+        TreeNode root = new TreeNode(preorder[ps]);
+        int mid = findIndex(inorder, is, ie, preorder[ps]);
+        root.left = build(preorder, ps+1, ps+mid-is, inorder, is, mid-1);
+        root.right = build(preorder, ps+mid-is+1, pe, inorder, mid+1, ie);
+        return root;
+    }
+    
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return build(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
+    }
 	// 先序 中序 后序遍历都是深度优先，递归压栈，适合寻找元素为叶节点的场景。栈的深度最深不超过树高！
 	public void preOrder(TreeNode root, List<Integer> order) {
 		if (root == null) return;
