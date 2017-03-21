@@ -1,4 +1,4 @@
-package array;
+package array.subsetsum;
 
 public class MaxSubArray {
 	public static void main(String[] args) {

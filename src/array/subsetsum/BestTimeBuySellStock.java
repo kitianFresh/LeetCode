@@ -1,4 +1,4 @@
-package array;
+package array.subsetsum;
 
 public class BestTimeBuySellStock {
 	// 由于价差为负数肯定没有意义，因此和 MaxSubArray 稍有不同的是 max<0 时，直接返回0

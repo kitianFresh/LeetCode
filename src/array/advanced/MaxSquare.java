@@ -1,4 +1,4 @@
-package array;
+package array.advanced;
 
 public class MaxSquare {
 	public static void main(String[] args) {

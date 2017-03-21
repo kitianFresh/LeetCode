@@ -1,9 +1,7 @@
-package advanced;
+package array.advanced;
 
 import java.util.Random;
 import java.util.Stack;
-
-import array.LargestRectangleAreaDC;
 
 public class LargestRectHist {
 	public static void main(String[] args) {

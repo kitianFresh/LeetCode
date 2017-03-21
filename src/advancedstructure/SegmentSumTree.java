@@ -1,4 +1,4 @@
-package advanced;
+package advancedstructure;
 
 public class SegmentSumTree {
 	public static void main(String[] args) {

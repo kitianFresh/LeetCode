@@ -1,4 +1,4 @@
-package array;
+package array.subsetsum;
 
 import java.util.Arrays;
 

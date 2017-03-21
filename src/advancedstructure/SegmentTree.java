@@ -1,4 +1,4 @@
-package array;
+package advancedstructure;
 
 public class SegmentTree {
 	int[] st = null;

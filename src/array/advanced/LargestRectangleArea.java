@@ -1,4 +1,4 @@
-package array;
+package array.advanced;
 
 import java.util.Random;
 
