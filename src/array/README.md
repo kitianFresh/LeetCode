@@ -15,5 +15,5 @@
  - [牛客网-特殊交换](https://www.nowcoder.com/questionTerminal/a619f76bcd034124bb4ab726506364c9?toCommentId=106891)
  - [算法导论-逆序数]()
  - [牛客网-搜狗矩阵元素相乘-未做](https://www.nowcoder.com/questionTerminal/935fbb71542345ef87a7acc190e2577b?orderByHotValue=1&difficulty=00100&commentTags=C/C++)
- - [牛客网-挑选镇长-未做](https://www.nowcoder.com/questionTerminal/01c630ecb9cf42738d37788c2a0fbc83)
+ - [牛客网-挑选镇长](https://www.nowcoder.com/questionTerminal/01c630ecb9cf42738d37788c2a0fbc83)
  

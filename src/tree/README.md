@@ -28,6 +28,7 @@ System.out.println(citiesCommaSeparated);
  - [**437. Path Sum III**](https://leetcode.com/problems/path-sum-iii/?tab=Description)
  - [129. Sum Root to Leaf Numbers还可以继续优化](https://leetcode.com/problems/sum-root-to-leaf-numbers/?tab=Description)
  - [***124. Binary Tree Maximum Path Sum***未做](https://leetcode.com/problems/binary-tree-maximum-path-sum/?tab=Description)
+ - [508. Most Frequent Subtree Sum未做](https://leetcode.com/problems/most-frequent-subtree-sum/#/description)
  
 ## Symmetric & Mirror & Invert
  - [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/?tab=Description)
@@ -35,8 +36,11 @@ System.out.println(citiesCommaSeparated);
  
 ## Binary Search Tree(BST)
  - [>_<501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/?tab=Solutions)
+ - [538. Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/#/description)
  - [**230. Kth Smallest Element in a BST**](https://leetcode.com/problems/kth-smallest-element-in-a-bst/?tab=Description)
  - [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/?tab=Description)
+ - [173. Binary Search Tree Iterator未做](https://leetcode.com/problems/binary-search-tree-iterator/#/description)
+ - [99. Recover Binary Search Tree未做](https://leetcode.com/problems/recover-binary-search-tree/#/description)
  
  
 ## Basic Tree Traversal
@@ -46,6 +50,7 @@ System.out.println(citiesCommaSeparated);
  - [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/?tab=Description)
  - [107. Binary Tree Level Order Traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/?tab=Description)
  - [103. Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/?tab=Description)
+ - [513. Find Bottom Left Tree Value](https://leetcode.com/problems/find-bottom-left-tree-value/#/description)
 
 ### Binary Tree Height & Width & Level Order
 
@@ -59,3 +64,9 @@ System.out.println(citiesCommaSeparated);
  - [110. Balanced Binary Tree未做](https://leetcode.com/problems/balanced-binary-tree/?tab=Description)
  - [打印一颗树]()
  - [235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/#/description)
+ - [222. Count Complete Tree Nodes less O(n)未完待续](https://leetcode.com/problems/count-complete-tree-nodes/#/solutions)
+ 
+### Binary Tree & LinkedList
+ - [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/#/description)
+ - [117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/#/description)
+ - [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/#/description)
