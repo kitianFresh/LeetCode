@@ -15,16 +15,16 @@ public class LCA {
         return left != null ? left : right;
     }
 	
-	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+	public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {
         while ((root.val - p.val)*(root.val - q.val) > 0) { // 同左或同右
         	root = root.val>p.val?root.left:root.right;
         }
         return root;
     }	
 	
-	public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+	public TreeNode lowestCommonAncestorBST1(TreeNode root, TreeNode p, TreeNode q) {
         if ((root.val - p.val)*(root.val - q.val) > 0) { // 同左或同右
-        	return lowestCommonAncestor1(root.val>p.val?root.left:root.right, p, q);
+        	return lowestCommonAncestorBST1(root.val>p.val?root.left:root.right, p, q);
         }
         return root;
     }	
