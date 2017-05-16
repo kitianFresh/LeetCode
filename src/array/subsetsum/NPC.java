@@ -73,6 +73,8 @@ public class NPC {
 	}
 	
 	// 416. Partition Equal Subset Sum， 如果是找到两部分，使其尽量相等，即差距最小，如何做？
+	// subset sum can be reduced to equal partition, https://cs.stackexchange.com/questions/6111/how-can-i-reduce-subset-sum-to-partition
+	// 一个集合L 可以被划分成 两个元素之和相等的集合 问题 <==> 一个集合 L 中是否存在 一个子集, 他的元素之和等于某个数
 	public boolean canPartition(int[] nums) {
         if (nums == null || nums.length == 0) return false;
         int n,sum=0;
@@ -83,4 +85,50 @@ public class NPC {
         if (sum % 2 == 1) return false;
         return isSubSetSumDP(nums, sum/2);
     }
+	
+	// Partition a set into two subsets such that the difference of subset sums is minimum
+	// NP 完全问题, 只存在近似解或者 采用 伪多项式 时间解决,即dp,但是dp大小和输入的和有关
+	// sum1 + sum2 = sum; min(abs(sum1 - sum2)). 假设 sum1 >= sum2, 则 sum1 - sum/2 = sum/2 - sum2;
+	// 问题也可以转换为 0 1背包, 就是在 sum/2 的容量下, 找到累计价值sum1越大越好! c = sum/2; 最后比较 sum1 和 sum2
+	// dp[i][j] 表示前i个元素,放进容量为 j 的背包的最大价值数. dp[i][j] = max(dp[i-1][j-a[i]]+a[i], dp[i-1][j]), 这里的价值也是重量本身
+	public int minDiffPartition(int[] a) {
+		if (a == null || a.length < 1) return 0;
+		int n = a.length;
+		int sum = 0;
+		for (int i=0; i<n; i++) {
+			sum += a[i];
+		}
+		int[][] dp = new int[n+1][sum/2+1];
+		for (int i=1; i < n + 1; i++) {
+			for (int j=1; j< sum/2 + 1; j++) {
+				if (j >= a[j-1]) {
+					dp[i][j] = Math.max(dp[i-1][j-a[i-1]]+a[i], dp[i-1][j]);
+				}
+			}
+		}
+		return Math.abs(sum - dp[n][sum/2]- dp[n][sum/2]);
+	}
+	
+	// 递归写法 时间复杂度 O(2^n). 最后选出来的两个集合,必定一个包含 a[i], 一个不包含 a[i], 
+	// 对于包含 a[i] 的情况,子问题就是 minDiffPartitionRecursion(a, i-1, calculatedSum+a[i], totalSum)
+	// 对于不包含 a[i] 的情况, 子问题就是 minDiffPartitionRecursion(a, i-1, calculatedSum, totalSum)
+	// 问题可以划分为
+	public int minDiffPartitionRecursion(int[] a, int i, int calculatedSum, int totalSum) {
+		if (i == 0) {
+			return Math.abs(totalSum - calculatedSum - calculatedSum);
+		}
+		return Math.min(minDiffPartitionRecursion(a, i-1, calculatedSum+a[i], totalSum),
+						minDiffPartitionRecursion(a, i-1, calculatedSum, totalSum));
+	}
+	
+	int findMin(int arr[], int n)
+	{
+	    // Compute total sum of elements
+	    int sumTotal = 0;
+	    for (int i=0; i<n; i++)
+	        sumTotal += arr[i];
+	 
+	    // Compute result using recursive function
+	    return minDiffPartitionRecursion(arr, n, 0, sumTotal);
+	}
 }
