@@ -43,6 +43,19 @@ public class MergeKList {
 		return dumby.next;
 	}
 
+	public ListNode dc(ListNode[] lists, int left, int right) {
+        if (lists == null || lists.length < 1) return null;
+        if (left == right) return lists[left];
+        int mid = (left + right)/2;
+        ListNode l = dc(lists, left, mid);
+        ListNode r = dc(lists, mid+1, right);
+        return mergeTwoLists(l, r);
+    }
+    public ListNode mergeKLists1(ListNode[] lists) {
+        if (lists == null || lists.length < 1) return null;
+        return dc(lists, 0, lists.length-1);
+    }
+    
 	public ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null)
 			return null;
