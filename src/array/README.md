@@ -35,9 +35,10 @@
  - [268. Missing Number](https://leetcode.com/problems/missing-number/#/description)
  - [389. Find the Difference](https://leetcode.com/problems/find-the-difference/#/description)
  - [41. First Missing Positive**hard未做](https://leetcode.com/problems/first-missing-positive/#/description)
- - [350. Intersection of Two Arrays II未做](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
- - [349. Intersection of Two Arrays未做](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
+ - [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
+ - [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
  - [421. Maximum XOR of Two Numbers in an Array未做](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/#/description)
+
 ## 新增
  - [480. Sliding Window Median未做](https://leetcode.com/problems/sliding-window-median/#/description)
  - [239. Sliding Window Maximum未做](https://leetcode.com/problems/sliding-window-maximum/#/description)
@@ -55,6 +56,8 @@
 #### 参考
  - [Manacher](https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/01.05.md)
  - [Manacher's ALGORITHM: O(n)时间求字符串的最长回文子串  不指定]()
+
 ### LCS LCStr LIS LCSD
-
-
+ - [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/#/description)
+ - [334. Increasing Triplet Subsequence未做](https://leetcode.com/problems/increasing-triplet-subsequence/#/description)
+ - [354. Russian Doll Envelopes未做hard](https://leetcode.com/problems/russian-doll-envelopes/#/description)

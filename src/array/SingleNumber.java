@@ -1,5 +1,13 @@
 package array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class SingleNumber {
 	
 	
@@ -111,6 +119,83 @@ public class SingleNumber {
         return ans;
     }
 	
+	// [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
+	// 法一 two pointer and Sorted; time O(nlgn) space O(1)
+    public int[] intersection(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) return new int[0];
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        ArrayList<Integer> interset = new ArrayList<Integer>();
+        int i = 0, j = 0;
+        int m = nums1.length;
+        int n = nums2.length;
+        while (i < m && j < n) {
+            while (i < m - 1 && nums1[i] == nums1[i+1]) i++;// 去重
+            while (j < n - 1 && nums2[j] == nums2[j+1]) j++;
+            if (nums1[i] < nums2[j]) {
+                i ++;
+            }
+            else if (nums1[i] > nums2[j]) {
+                j ++;
+            }
+            else {
+                interset.add(nums1[i]);
+                i ++;
+                j ++;
+            }
+        }
+        int[] res = new int[interset.size()];
+        for (i = 0; i < res.length; i++) {
+            res[i] = interset.get(i);
+        }
+        return res;
+    }
+    // 法二 hashtable time O(n) space o(n)
+    public int[] intersection1(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) return new int[0];
+        Set<Integer> set = new HashSet<Integer>();
+        Set<Integer> interset = new HashSet<Integer>();
+        for (int num : nums1) {
+            set.add(num);
+        }
+        
+        for (int num : nums2) {
+            if (set.contains(num)) {
+                interset.add(num);
+            }
+        }
+        
+        int[] res = new int[interset.size()];
+        int index = 0;
+        for (Integer i : interset) {
+        	res[index++] = i;
+        }
+        return res;
+    }
+	
+    // [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
+    public int[] intersectII(int[] nums1, int[] nums2) {
+        if (nums1 == null || nums1.length == 0 || nums2 == null || nums2.length == 0) return new int[0];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        List<Integer> interset = new ArrayList<Integer>();
+        for (int num : nums1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        
+        for (int num : nums2) {
+            if (map.containsKey(num)) {
+                map.put(num, map.get(num) - 1);
+                if (map.get(num) == 0) map.remove(num);
+                interset.add(num);
+            }
+        }
+        int[] res = new int[interset.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = interset.get(i);
+        }
+        return res;
+    }
+    
 	// [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/#/solutions)
     // binary search 的理解! 我们一般认为的 二分查找是对数组位置的二分,默认数组有序! 但是如果数组无序, 那么有没有办法做二分查找呢? 
     // 这里的二分查找就非常巧妙, 我们二分树的节点值就是我们要找的数本身,而原来的数组的位置和这棵树并没有直接的对应关系, 关键条件就是这 n+1 个数都是 1~n.
