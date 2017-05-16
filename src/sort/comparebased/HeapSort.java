@@ -7,6 +7,25 @@ public class HeapSort {
 	// bottom up; 堆是完全二叉树，因此下标从 0 开始的数组 父节点 i 的左右孩子分别为 2*i+1,2*i+2; 
 	// 并且如果存在孩子节点，只可能是左孩子或左右孩子，不可能只含右孩子
 	public static void maxHeapify(int[] A, int start, int end) {
+		int left = 2 * start + 1;
+		int right = 2 * start + 2;
+		int max;
+		if (left <= end && A[left] > A[start]) {
+			max = left;
+		}
+		else {
+			max = start;
+		}
+		if (right <= end && A[right] > A[max]) {
+			max = right;
+		}
+		if (max != start) {
+			swap(A, start, max);
+			maxHeapify(A, max, end);
+		}
+	}
+	// 循环多余了, 因为调整一个父节点只可能影响一条分支! 递归下降只是在一条路径上, 即最大是树的深度.
+	public static void maxHeapify1(int[] A, int start, int end) {
 		if (start >= end) return ;
 		for (int i = (end-1)/2; i >= start; i--) {
 			int left = 2 * i + 1;
@@ -15,13 +34,13 @@ public class HeapSort {
 				int max = A[left] > A[right] ? left : right;
 				if (A[left] > A[i] || A[right] > A[i]) {
 					swap(A, max, i);
-					maxHeapify(A, max, end);
+					maxHeapify1(A, max, end);
 				}
 			}
 			if (left <= end && right > end) {
 				if (A[left] > A[i]) {
 					swap(A, left, i);
-					maxHeapify(A, left, end);
+					maxHeapify1(A, left, end);
 				}
 			}
 		}
