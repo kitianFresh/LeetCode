@@ -17,10 +17,40 @@
  - [牛客网-搜狗矩阵元素相乘-未做](https://www.nowcoder.com/questionTerminal/935fbb71542345ef87a7acc190e2577b?orderByHotValue=1&difficulty=00100&commentTags=C/C++)
  - [牛客网-挑选镇长](https://www.nowcoder.com/questionTerminal/01c630ecb9cf42738d37788c2a0fbc83)
  
-## BestTimeBuyStock
+## BestTimeBuyStock 系列
  - [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/#/description)
  - [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/#/description)
  - [123. Best Time to Buy and Sell Stock III](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/#/description)
- - [188. Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/#/description)
- - [309. Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/#/description)
+ - [188. Best Time to Buy and Sell Stock IV未做](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/#/description)
+ - [309. Best Time to Buy and Sell Stock with Cooldown未做](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/#/description)
+
+### 参考
  - [Best Time to Buy and Sell Stock 买卖股票的最佳时机](https://segmentfault.com/a/1190000003483697)
+ 
+## SignleNumber 系列
+ - [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/#/solutions)
+ - [136. Single Number未做](https://leetcode.com/problems/single-number/#/description)
+ - [137. Single Number II未做](https://leetcode.com/problems/single-number-ii/#/description)
+ - [260. Single Number III未做](https://leetcode.com/problems/single-number-iii/#/description)
+ - [268. Missing Number未做](https://leetcode.com/problems/missing-number/#/description)
+ - [389. Find the Difference未做](https://leetcode.com/problems/find-the-difference/#/description)
+## 新增
+ - [480. Sliding Window Median未做](https://leetcode.com/problems/sliding-window-median/#/description)
+ - [239. Sliding Window Maximum未做](https://leetcode.com/problems/sliding-window-maximum/#/description)
+ - [316. Remove Duplicate Letters未做](https://leetcode.com/problems/remove-duplicate-letters/#/description)
+ - [42. Trapping Rain Water未做](https://leetcode.com/problems/trapping-rain-water/#/description)
+ 
+## 字符串系列
+### 回文串
+ - [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/#/description)
+ - [516. Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/#/description)
+ - [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/#/description)
+ - [336. Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/#/description)
+ - [214. Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/#/description)
+ 
+#### 参考
+ - [Manacher](https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/01.05.md)
+ - [Manacher's ALGORITHM: O(n)时间求字符串的最长回文子串  不指定]()
+### LCS LCStr LIS LCSD
+
+
