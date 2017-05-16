@@ -38,7 +38,7 @@ public class DepthFirstPath {
 	}
 	
 	public static void main(String[] args) {
-		Graph G = new Graph();
+		Graph G = new Graph(0);
 		G.buildGraph();
 		DepthFirstPath dfp = new DepthFirstPath(G, 0);
 		for (int v= 0; v < G.V(); v++) {

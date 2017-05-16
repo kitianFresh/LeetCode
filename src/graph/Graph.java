@@ -9,6 +9,13 @@ public class Graph {
 	int V;
 	int E;
 	LinkedList<Integer>[] adj;
+	public Graph(int V) {
+		this.V = V;
+		adj = new LinkedList[V];
+		for (int v = 0; v < V; v++) {
+			adj[v] = new LinkedList<Integer>();
+		}
+	}
 	public void buildGraph() {
 		
 		Scanner cin = new Scanner(new BufferedInputStream(System.in));
