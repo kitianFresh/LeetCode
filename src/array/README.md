@@ -29,11 +29,15 @@
  
 ## SignleNumber 系列
  - [287. Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/#/solutions)
- - [136. Single Number未做](https://leetcode.com/problems/single-number/#/description)
- - [137. Single Number II未做](https://leetcode.com/problems/single-number-ii/#/description)
- - [260. Single Number III未做](https://leetcode.com/problems/single-number-iii/#/description)
- - [268. Missing Number未做](https://leetcode.com/problems/missing-number/#/description)
- - [389. Find the Difference未做](https://leetcode.com/problems/find-the-difference/#/description)
+ - [136. Single Number](https://leetcode.com/problems/single-number/#/description)
+ - [137. Single Number II](https://leetcode.com/problems/single-number-ii/#/description)
+ - [260. Single Number III](https://leetcode.com/problems/single-number-iii/#/description)
+ - [268. Missing Number](https://leetcode.com/problems/missing-number/#/description)
+ - [389. Find the Difference](https://leetcode.com/problems/find-the-difference/#/description)
+ - [41. First Missing Positive**hard未做](https://leetcode.com/problems/first-missing-positive/#/description)
+ - [350. Intersection of Two Arrays II未做](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
+ - [349. Intersection of Two Arrays未做](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
+ - [421. Maximum XOR of Two Numbers in an Array未做](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/#/description)
 ## 新增
  - [480. Sliding Window Median未做](https://leetcode.com/problems/sliding-window-median/#/description)
  - [239. Sliding Window Maximum未做](https://leetcode.com/problems/sliding-window-maximum/#/description)
