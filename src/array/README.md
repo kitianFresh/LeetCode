@@ -38,6 +38,8 @@
  - [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
  - [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
  - [421. Maximum XOR of Two Numbers in an Array未做](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/#/description)
+ - [442. Find All Duplicates in an Array未做](https://leetcode.com/problems/find-all-duplicates-in-an-array/#/description)
+ - [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/solutions)
 
 ## 新增
  - [480. Sliding Window Median未做](https://leetcode.com/problems/sliding-window-median/#/description)
