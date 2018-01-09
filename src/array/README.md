@@ -38,8 +38,11 @@
  - [350. Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/#/description)
  - [349. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/#/description)
  - [421. Maximum XOR of Two Numbers in an Array未做](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/#/description)
- - [442. Find All Duplicates in an Array未做](https://leetcode.com/problems/find-all-duplicates-in-an-array/#/description)
+ - [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/#/description)
  - [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/solutions)
+ - [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/#/description)
+ - [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/#/description)
+ - [220. Contains Duplicate III](https://leetcode.com/problems/contains-duplicate-iii/#/description)
 
 ## 新增
  - [480. Sliding Window Median未做](https://leetcode.com/problems/sliding-window-median/#/description)
@@ -49,6 +52,7 @@
  
 ## 字符串系列
 ### 回文串
+ - [合并构造回文序列的最小代价](https://www.nowcoder.com/questionTerminal/0147cbd790724bc9ae0b779aaf7c5b50)
  - [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/#/description)
  - [516. Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/#/description)
  - [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/#/description)

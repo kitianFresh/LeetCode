@@ -48,4 +48,61 @@ public class RotateArray {
     	}
     }
     
+    /**
+     * 有一个长为n的数组A，求满足0≤a≤b<n的A[b]-A[a]的最大值。
+		给定数组A及它的大小n，请返回最大差值。
+		测试样例：
+		[10,5],2
+		返回：0
+     */
+    public int getDis(int[] A, int n) {
+        int min = A[0];
+        int maxDiff = 0;
+        for (int i = 1; i < n; i++) {
+            maxDiff = Math.max(maxDiff, A[i] - min);
+            if (A[i] < min) {
+                min = A[i];
+            }
+        }
+        return maxDiff;
+    }
+    /**
+     * 请设计一个复杂度为O(n)的算法，计算一个未排序数组中排序后相邻元素的最大差值。
+		给定一个整数数组A和数组的大小n，请返回最大差值。保证数组元素个数大于等于2小于等于500。
+		测试样例：
+		[9,3,1,10],4
+		返回：6
+     */
+    public int findMaxDivision(int[] A, int n) {
+        // 排序后还是O(n), 必须要用桶排序或者计数排序了
+        // 首先计算最大最小值确定桶的大小; 然后进行通排序.最后查看;对含有负数的情况是一样的,做一个映射即可; 最后计算连续空桶个数最大的;
+        int min = A[0];
+        int max = A[0];
+        for (int i = 1; i < n; i++) {
+            if (A[i] > max) {
+                max = A[i];
+            }
+            if (A[i] < min) {
+                min = A[i];
+            }
+        }
+        
+        // 填桶
+        int[] bucket = new int[max-min+1];
+        for (int i = 0; i < n; i++) {
+            bucket[A[i]-min]++;
+        }
+        
+        // 统计最大连续空桶个数
+        int maxDiff = 0;
+        for (int i = 0; i < bucket.length; i++) {
+            int diff = 0;
+            while (i < bucket.length && bucket[i] == 0) {
+                diff ++;
+                i ++;
+            }
+            maxDiff = Math.max(maxDiff, diff);
+        }
+        return maxDiff + 1;
+    }
 }

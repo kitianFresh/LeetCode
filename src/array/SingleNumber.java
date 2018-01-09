@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SingleNumber {
 	
@@ -229,4 +230,116 @@ public class SingleNumber {
         }
         return count;
     }
+    
+    //　[448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/#/solutions)
+    // Time O(n) Space O(n)
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+    	ArrayList<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) return res;
+        int n = nums.length;
+        boolean[] map = new boolean[n];
+        for (int i = 0; i < n; i++) {
+        	map[i] = false;
+        }
+       
+        for (int num : nums) {
+            map[num-1] = true;
+        }
+        
+        for (int i = 0; i < n; i++) {
+            if (!map[i]) {
+                res.add(i+1);
+            }
+        }
+        return res;
+    }
+    // Time O(n) Space O(1) 现将nums中所有元素按照hash 变为负数，那些没有出现的数对应位置的元素将保持正数
+    public List<Integer> findDisappearedNumbers1(int[] nums) {
+    	ArrayList<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) return res;
+        
+        int n = nums.length;
+        int num;
+        for (int i = 0; i < n; i++) {
+        	num = Math.abs(nums[i]) - 1;
+        	if (nums[num] > 0) {
+        		nums[num] = -nums[num];
+        	}
+        }
+       
+        for (int i = 0; i < n; i++) {
+        	if (nums[i] > 0) {
+        		res.add(i+1);
+        	}
+        }
+ 
+        return res;
+    }
+    // [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/#/description)
+    public List<Integer> findDuplicates(int[] nums) {
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        if (nums == null || nums.length == 0) return res;
+        int n = nums.length;
+        int val;
+        for (int i = 0; i < n; i++) {
+            val = Math.abs(nums[i]) - 1;
+            if (nums[val] > 0) {
+                nums[val] = -nums[val];
+            }
+            else {
+                res.add(Math.abs(nums[i]));
+            }
+        }
+        return res;
+    }
+    
+    // [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/#/description)
+    public boolean containsDuplicate(int[] nums) {
+        if (nums == null || nums.length == 0) return false;
+        HashSet<Integer> set = new HashSet<Integer>();
+        for (int num : nums) {
+            if (set.contains(num)) return true;
+            else set.add(num);
+        }
+        return false;
+    }
+    
+    // [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/#/description)
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return false;
+        int n = nums.length;
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0;i < n; i++) {
+            if (map.containsKey(nums[i])) {
+                if (Math.abs(map.get(nums[i])-i) <= k) return true;
+            }
+            map.put(nums[i], i);//　当前不含，或者已经含有但是间距太大都进行更新．因为 i 是顺序递增的．
+        }
+        return false;
+    }
+    
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        if (nums == null || nums.length == 0 || k <= 0) {
+            return false;
+        }
+
+        final TreeSet<Integer> values = new TreeSet<>();
+        for (int ind = 0; ind < nums.length; ind++) {
+
+            final Integer floor = values.floor(nums[ind] + t);
+            final Integer ceil = values.ceiling(nums[ind] - t);
+            if ((floor != null && floor >= nums[ind])
+                    || (ceil != null && ceil <= nums[ind])) {
+                return true;
+            }
+
+            values.add(nums[ind]);
+            if (ind >= k) {
+                values.remove(nums[ind - k]);
+            }
+        }
+
+        return false;
+    }
+    
 }

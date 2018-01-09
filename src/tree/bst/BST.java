@@ -39,7 +39,7 @@ public class BST {
                 if (root.right == null) {
                     return root.left;
                 }
-                TreeNode s = getSuccessor(root);
+                TreeNode s = getMinimum(root);
                 root.val = s.val;
                 root.right = deleteNode(root.right, s.val);
             }
@@ -47,7 +47,9 @@ public class BST {
         return root;
     }
     
-    public TreeNode getSuccessor(TreeNode current) {
+    // 注意这里的找后继只是找右子树最左边的.
+    // 真实的找BST节点的后继元素需要分两种情况, 一种就是右子树存在,则往下搜索最左节点. 另一种情况是右子树不存在, 则必须往上搜索父亲.
+    public TreeNode getMinimum(TreeNode current) {
         current = current.right;
         while (current.left != null) {
             current = current.left;

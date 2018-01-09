@@ -30,6 +30,17 @@ public class NPC {
 		}
 	}
 	
+	public void nChars(StringBuilder sb, String result, int len) {
+		if (len == sb.length()) {
+			System.out.println(result);
+		}
+		else {
+			for (int i = len; i < sb.length(); i++) {
+				
+			}
+		}
+	}
+	
 	// NP 2^n。 可以处理含有负数的数组
 	public boolean isSubSetSum(int[] A, int end, int target) {
 		if (A == null || A.length == 0) return false;
