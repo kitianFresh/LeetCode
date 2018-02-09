@@ -172,6 +172,38 @@ public class TwoSum {
         }
         return res;
     }
+    
+    public List<List<Integer>> threeSumYAS(int[] nums) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length < 3) return res;
+        Arrays.sort(nums);
+        int len = nums.length;
+        for (int m = 0; m < len - 2; m ++) {
+            int c = -nums[m];
+            int i = m + 1;
+            int j = len - 1;
+            while (i < j) {
+                int a = nums[i];
+                int b = nums[j];
+                if (a + b > c) j --;
+                else if (a + b < c) i ++;
+                else {
+                    List<Integer> tup = new ArrayList<Integer>();
+                    tup.add(-c);
+                    tup.add(a);
+                    tup.add(b);
+                    res.add(tup);
+                    while (i < j && nums[i] == nums[i+1]) i ++;
+                    while (i < j && nums[j] == nums[j-1]) j --;
+                    i ++;
+                    j --;
+                }
+            }
+            while(m < len -2 && nums[m] == nums[m+1]) m ++;
+        }
+        return res;
+    }
+    
     // a+b+c 和 target 最接近；首先排序，然后使用 target - a；问题转化为找 b 和 c 使得他和 target - a 最接近； 
     // 由于数组有序， 双指针 nums[left] + nums[right] > target-a 的话，必定需要right--，因为此时如果left++必定更大，就不是更接近了，排除；
     // 同理，当 nums[left] + nums[right] < target-a， 必定left++, 因为此时如果 right--的话，就会更小，远离结果了；
