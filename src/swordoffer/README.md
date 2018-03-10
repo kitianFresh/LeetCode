@@ -53,4 +53,19 @@ top-down递归定义子问题, bottom-up for loop
 
 ## [把二叉树打印成多行](https://www.nowcoder.com/practice/445c44d982d04483b04a54f298796288?tpId=13&tqId=11213&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./BinaryTreeLevel.java)
 
+## [从上往下打印二叉树]()
+
+
 ## [**二叉树中和为某一值的路径**](https://www.nowcoder.com/practice/b736e784e3e34731af99065031301bca?tpId=13&tqId=11177&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./TreeRootPath.java)
+注意满足条件时候，回退之前需要从DFS路径中删除刚加入的节点，DFS先序遍历完成最后也需要将刚加入的节点移除，才能回退到上一层重新开始另一条路径
+
+
+## [**二叉树中序遍历的下一个节点**](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./BinaryTreeNextNode.java)
+分情况讨论清楚，无右孩子,则分两种情况, pNode 是左孩子, 则父亲就是next, pNode是右孩子,则得看父亲是左孩子还是右孩子；有右孩子，则在右孩子的最左边
+
+## [链表翻转](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./ReverseLinkList.java)
+采用头插法重建，冗余头结点
+
+## [链表中倒数第k个节点](https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&tqId=11167&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./KthListNode.java)
+
+
