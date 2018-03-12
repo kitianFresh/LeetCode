@@ -63,9 +63,17 @@ top-down递归定义子问题, bottom-up for loop
 ## [**二叉树中序遍历的下一个节点**](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./BinaryTreeNextNode.java)
 分情况讨论清楚，无右孩子,则分两种情况, pNode 是左孩子, 则父亲就是next, pNode是右孩子,则得看父亲是左孩子还是右孩子；有右孩子，则在右孩子的最左边
 
+## [二叉搜索树的后序遍历序列](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./SeqOfPostOrder.java) 
+
+
 ## [链表翻转](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./ReverseLinkList.java)
 采用头插法重建，冗余头结点
 
 ## [链表中倒数第k个节点](https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&tqId=11167&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./KthListNode.java)
 
 
+## [两个栈实现队列](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./StackToQueue.java)
+
+## [两个队列实现栈]()　[source-code](./StackToQueue.java)
+
+## [包含min函数的栈](https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./MinStack.java)
