@@ -24,44 +24,59 @@ public class InversionNumbers {
 	// 内部的逆序数发生了改变，但每一次都不改变 左右分开的集合的逆序数！！
 	// 即 2 3 8 6 1, 2 3 8 和 6 1 两部分，左子集中 大于 右子集 的逆序对不会因为 左右部分内部的变化而变化！这个规律就让 左右部分可以不断的拆分
 	// 直到 左右部分都是只包含一个数的集合，逆序数也容易求！
-	public static int mergeCrossInversionNumbers(int[] A, int l, int mid, int r) {
-		int count = 0;
-		int[] a = new int[mid-l+2];
-		int[] b = new int[r-mid+1];
-		int i,j;
-		for (i=0;i<a.length-1;i++) {
-			a[i] = A[l+i];
-		}
-		a[i] = Integer.MAX_VALUE;
-		for (j=0;j<b.length-1;j++) {
-			b[j] = A[mid+1+j];
-		}
-		b[j] = Integer.MAX_VALUE;
-		i = j = 0;
-		int k = l;
-		int nlower = 0; // 记录当前b[]中 因为小于 a 而放入 A 中的数的个数,那么当a要放入的时候，就说明b中比她小的个数就是nlower，加上即可作为当前逆序对数
-		while (i < a.length-1 || j < b.length-1) {
-			if (a[i] <= b[j]) {
-				A[k++] = a[i++];
-				count += nlower;
-			}
-			else {
-				A[k++] = b[j++];
-				nlower += 1;
-			}
-		}
-//		count = ((count==0) ? (nlower) : (count));
-		return count;
-	}
-	
-	public static int inversionNumbersDC(int[] A, int l, int r) {
-		if (l >= r) return 0;
-		int mid = (l+r)/2;
-		int left = inversionNumbersDC(A, l, mid);
-		int right = inversionNumbersDC(A, mid+1, r);
-		int cross = mergeCrossInversionNumbers(A, l, mid, r);
-		return left + cross + right;
-	}
+	public int InversePairs1(int [] array) {
+        if (array == null || array.length <= 1) return 0;
+        int[] aux = new int[array.length];
+        int res = inversePairs(array, aux, 0, array.length - 1)%1000000007;
+        return res;
+    }
+ 
+    public int inversePairs(int[] nums, int[] aux, int l, int r) {
+        if (l == r) return 0;
+        int m = (l + r) / 2;
+        int left = inversePairs(nums, aux, l, m)%1000000007;
+        int right = inversePairs(nums, aux, m+1, r)%1000000007;
+        for (int index = l; index <= r; index ++) {
+            aux[index] = nums[index];
+        }
+        int cross = 0;
+        int i = l;
+        int j = m + 1;
+        int k = l;
+        int nlower = 0;
+        while (i <= m || j <= r) {
+            if (i == m + 1) break;
+            if (j == r + 1) break;
+            if (aux[i] <= aux[j]) {
+                nums[k++] = aux[i++];
+                cross += nlower;
+                if (cross >= 1000000007) {
+                    cross %= 1000000007;
+                }
+            }
+            else {
+                nlower ++;
+                nums[k++] = aux[j++];
+            }
+        }
+        if (i < m + 1 && j == r + 1) {
+            while (i <= m) {
+                nums[k++] = aux[i++];
+                cross += nlower;
+                if (cross >= 1000000007) {
+                    cross %= 1000000007;
+                }
+            }
+        }
+        if (j < r + 1 && i == m + 1) {
+            while (j <= r) {
+                nums[k++] = aux[j++];
+            }
+        }
+ 
+         
+        return (cross + left + right)%1000000007;
+    }
 	
 	public static void main(String[] args) {
         Scanner cin = new Scanner(new BufferedInputStream(System.in));  

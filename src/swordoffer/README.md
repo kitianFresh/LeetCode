@@ -29,6 +29,14 @@ top-down递归定义子问题, bottom-up for loop
 ## [把数组排成最小的数](https://www.nowcoder.com/practice/8fecd3f8ba334add803bf2a06af1b993?tpId=13&tqId=11185&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./ReorderMinNumber.java)
 关键是找到一种比较顺序
 
+## [数组的逆序对](https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5?tpId=13&tqId=11188&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./InversePairs.java)
+分治法，归并排序的变种；子问题，左边的逆序数＋右边的逆序数＋交叉的逆序数；　归并在合并两个有序数组的时候可以直接判断两个集合的逆序数
+
+## [*数组中出现次数超过一半的数字*](https://www.nowcoder.com/practice/e8a1b01a2df14cb2b228b30ee6a92163?tpId=13&tqId=11181&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./MoreThanHalfNum_Solution.java)
+第一种方法是使用快速排序，在排序的过程中，如果发现分区的插入位置是中间位置，说明就找到了该数，如果比中间位置小，说明数据在右边，比中间位置大，说明数据在左边；
+第二种方法，就是不需要修改原来的数组，但是可以通过记录当前数据元素result, 以及其个数count，如果下个数字和result 不等，个数count --，如果减到0,则更新当前result,并重置count=1;如果相等，则count++;　这里主要是运用该数超过一半的特性，如果他超过一半，累计到最后，必定还剩下１
+注意最后检查是否是超过一半；
+
 ## [***丑数***](https://www.nowcoder.com/practice/6aa9e04fc3794f68acf8778237ba065b?tpId=13&tqId=11186&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./UglyNumber.java)
 空间换时间，按序存储以前的丑数，顺序得来靠的是　一个法则，　后面的丑数一定是前面的丑数乘以　2或３或5得到的，找出他们第一个大于当前最大丑数的值，取三个中的最小值
 
@@ -63,7 +71,11 @@ top-down递归定义子问题, bottom-up for loop
 ## [**二叉树中序遍历的下一个节点**](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./BinaryTreeNextNode.java)
 分情况讨论清楚，无右孩子,则分两种情况, pNode 是左孩子, 则父亲就是next, pNode是右孩子,则得看父亲是左孩子还是右孩子；有右孩子，则在右孩子的最左边
 
-## [二叉搜索树的后序遍历序列](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./SeqOfPostOrder.java) 
+## [二叉搜索树的后序遍历序列](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./SeqOfPostOrder.java)
+后续遍历的特点是最后一个元素一定是根，然后有事二叉搜索树，一定是一半元素比根小，后半边元素比根大，满足条件的话继续递归左右两部分子树，不满足直接退出 
+
+## [序列化二叉树](https://www.nowcoder.com/practice/cf7e25aa97c04cc1a68c8f040e71fb84?tpId=13&tqId=11214&tPage=4&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./SerializeBinaryTree.java)
+BFS 或者　DFS 得方案
 
 
 ## [链表翻转](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./ReverseLinkList.java)
@@ -77,3 +89,14 @@ top-down递归定义子问题, bottom-up for loop
 ## [两个队列实现栈]()　[source-code](./StackToQueue.java)
 
 ## [包含min函数的栈](https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./MinStack.java)
+
+## [*栈的压入弹出序列*](https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./StackPopPushOrder.java)
+使用一个栈模拟压入弹出顺序，这里的关键是弹出的时候，就可以讲弹出的元素去掉，每次都和栈顶元素比较弹出顺序的首元素，相同则重栈中弹出，不同或者栈为空则压栈，如果已经压栈完成但是栈顶元素和剩余弹出序列首元素不等，说明失败
+
+
+## [字符串中第一个只出现一次的字符](https://www.nowcoder.com/practice/1c82e8cf713b4bbeb2a5b31cf5b0417c?tpId=13&tqId=11187&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./FirstOccurenceChar.java)
+
+## [字符流中第一个不重复的字符](https://www.nowcoder.com/practice/00de97733b8e4f97a3fb5c680ee10720?tpId=13&tqId=11207&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./FirstOccurenceChar.java)
+由于字符流无限，直接计数的话，无法再次重新扫描字符串了，因此你需要记住只出现一次的字符的位置，然后比较他们的位置来找到首次只出现一次的字符，这里就是将出现多次的置位负数，讲出现一次的直接值他出现的位置，初始化默认-1; 关键是记住位置信息和采用负数区分法
+
+
