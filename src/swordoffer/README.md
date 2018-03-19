@@ -37,6 +37,22 @@ top-down递归定义子问题, bottom-up for loop
 第二种方法，就是不需要修改原来的数组，但是可以通过记录当前数据元素result, 以及其个数count，如果下个数字和result 不等，个数count --，如果减到0,则更新当前result,并重置count=1;如果相等，则count++;　这里主要是运用该数超过一半的特性，如果他超过一半，累计到最后，必定还剩下１
 注意最后检查是否是超过一半；
 
+## [连续子数组的最大和](https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=13&tqId=11183&tPage=2&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./MaxSubArray.java)
+ - [和最大的连续子数组]
+ - [子序列的最大和]
+ - [和最大的连续子序列]
+ - [连续子数组的最大乘积] [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/description/)
+ - [乘积最大的连续子数组]
+ - [628. Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
+ - [713. Subarray Product Less Than K](https://leetcode.com/problems/subarray-product-less-than-k/description/)
+ - [238. Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/description/)
+ - [697. Degree of an Array](https://leetcode.com/problems/degree-of-an-array/description/)
+ - [子序列的最大乘积]
+ - [乘积最大的连续子序列]
+ - [121. Best Time to Buy and Sell Stock]
+ - [122. Best Time to Buy and Sell Stock II]
+ - [123. Best Time to Buy and Sell Stock III]
+
 ## [***丑数***](https://www.nowcoder.com/practice/6aa9e04fc3794f68acf8778237ba065b?tpId=13&tqId=11186&tPage=2&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./UglyNumber.java)
 空间换时间，按序存储以前的丑数，顺序得来靠的是　一个法则，　后面的丑数一定是前面的丑数乘以　2或３或5得到的，找出他们第一个大于当前最大丑数的值，取三个中的最小值
 
@@ -83,6 +99,10 @@ BFS 或者　DFS 得方案
 
 ## [链表中倒数第k个节点](https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&tqId=11167&tPage=1&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./KthListNode.java)
 
+## [复杂链表的复制](https://www.nowcoder.com/practice/f836b2c43afc4b35ad6adc41ec941dba?tpId=13&tqId=11178&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./RandomListCopy.java)
+第一种方法是hash映射，得到相对位置关系，让后顺序扫描把random 指针指向正确的位置！ space O(n) time O(n)
+**第二种方法是将链表冗余连接起来，原来的每一个节点在后面都跟着一个相同的节点，然后就可以通过原来的指向得到冗余的节点的random指向，最后再把冗余节点拿出来构成新的复制后的链表.　space O(1) time O(n)**
+
 
 ## [两个栈实现队列](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./StackToQueue.java)
 
@@ -94,9 +114,14 @@ BFS 或者　DFS 得方案
 使用一个栈模拟压入弹出顺序，这里的关键是弹出的时候，就可以讲弹出的元素去掉，每次都和栈顶元素比较弹出顺序的首元素，相同则重栈中弹出，不同或者栈为空则压栈，如果已经压栈完成但是栈顶元素和剩余弹出序列首元素不等，说明失败
 
 
+## [滑动窗口的最大值](https://www.nowcoder.com/practice/1624bc35a45c42c0bc17d17fa0cba788?tpId=13&tqId=11217&tPage=4&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./MaxSlidingWindow.java)
+第一种方法优先队列　time O(nlgK)
+**第二种方法，双端队列 time O(n)**
+
 ## [字符串中第一个只出现一次的字符](https://www.nowcoder.com/practice/1c82e8cf713b4bbeb2a5b31cf5b0417c?tpId=13&tqId=11187&tPage=2&rp=2&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) [source-code](./FirstOccurenceChar.java)
 
 ## [字符流中第一个不重复的字符](https://www.nowcoder.com/practice/00de97733b8e4f97a3fb5c680ee10720?tpId=13&tqId=11207&tPage=3&rp=2&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking) [source-code](./FirstOccurenceChar.java)
 由于字符流无限，直接计数的话，无法再次重新扫描字符串了，因此你需要记住只出现一次的字符的位置，然后比较他们的位置来找到首次只出现一次的字符，这里就是将出现多次的置位负数，讲出现一次的直接值他出现的位置，初始化默认-1; 关键是记住位置信息和采用负数区分法
+
 
 
