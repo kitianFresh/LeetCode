@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GroupAnagrams {
-	
+	// [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/description/)
 	public List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List> map = new HashMap<String, List>();
         List<List<String>> res = new ArrayList<List<String>>();
