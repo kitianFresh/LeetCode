@@ -85,6 +85,6 @@ public class InversionNumbers {
         for (int i=0; i<n; i++) {
             nums[i] = cin.nextInt();
         }
-        System.out.println(InversionNumbers.inversionNumbersDC(nums, 0, nums.length-1));
+        System.out.println(InversionNumbers.inversionNumbers(nums));
     }
 }

@@ -103,5 +103,4 @@ public class SearchRotated {
         }
         return min;
     }
-}}
 }
