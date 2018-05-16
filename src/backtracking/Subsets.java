@@ -3,12 +3,12 @@ package backtracking;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-//[78. Subsets](https://leetcode.com/problems/subsets/description/)
+	// [78. Subsets](https://leetcode.com/problems/subsets/description/)
 	// [90. Subsets II contains duplicated element](https://leetcode.com/problems/subsets-ii/description/)
 public class Subsets {
 	
 	// [78. Subsets](https://leetcode.com/problems/subsets/description/)
-	// 解法一  递归 dfs
+	// 解法一  自顶向下的递归
 	public List<List<Integer>> subsets(int[] nums) {
         return subsets(nums, nums.length-1);
     }

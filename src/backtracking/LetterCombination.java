@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class LetterCombination {
-	// [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
-	// 法一 递归 dfs
+	// [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
+	// 法一 自顶向下的递推方式
 	String[] digitsMap = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     public List<String> letterCombinations(String digits) {
         return letterCombinations(digits, digits.length() - 1);
