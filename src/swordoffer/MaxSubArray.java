@@ -48,9 +48,11 @@ public class MaxSubArray {
         return res;
     }
 	
-	// [子序列的最大和]
+	// [子序列的最大和(子序列可以连续可以不连续)]
 	
-	// [和最大的连续子序列]
+	// [和最大的子序列]
+	
+	// [子序列的最大和(子序列中任意相邻的两个数在原序列里都不相邻)]
 	
 	// [连续子数组的最大乘积] [152. Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/description/)
 	// [乘积最大的连续子数组]

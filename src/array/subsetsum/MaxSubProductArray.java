@@ -1,8 +1,8 @@
 package array.subsetsum;
 
-public class MaxSubArray {
+public class MaxSubProductArray {
 	public static void main(String[] args) {
-		MaxSubArray msa = new MaxSubArray();
+		MaxSubProductArray msa = new MaxSubProductArray();
 		int[] nums = {-4,-3,-2};
 		System.out.println(msa.maxProduct(nums));
 	}

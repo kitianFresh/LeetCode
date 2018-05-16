@@ -66,5 +66,5 @@
 
 ### LCS LCStr LIS LCSD
  - [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/#/description)
- - [334. Increasing Triplet Subsequence未做](https://leetcode.com/problems/increasing-triplet-subsequence/#/description)
+ - [***334. Increasing Triplet Subsequence***](https://leetcode.com/problems/increasing-triplet-subsequence/#/description) [source-code](./IncreasingTriplet.java)
  - [354. Russian Doll Envelopes未做hard](https://leetcode.com/problems/russian-doll-envelopes/#/description)
