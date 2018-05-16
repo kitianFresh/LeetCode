@@ -1,6 +1,13 @@
 # 图
 一种保存两点之间路径的方法是,使用一个数组,这个数组采用 树的 双亲数组表示法! 因为 DFS 递归遍历的过程中会获得一棵最小生成树, 因此如果要保存起点到其他连通点的所有路径,使用一个 **双亲表示法的数组树** 即可得到所有的路径.
 
+# DFS & BFS
+ - [走迷宫](https://www.nowcoder.com/practice/6276dbbda7094978b0e9ebb183ba37b9) [source-code](./Maze.java)
+ - [迷宫问题](https://www.nowcoder.com/practice/cf24906056f4488c9ddb132f317e03bc) [source-code](./MazeWithPath.java)
+ - [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/) [source-code](./Islands.java)
+ - [695. Max Area of Island](https://leetcode.com/problems/max-area-of-island/description/) [source-code](./Islands.java)
+	
+
 # Java
 java 中的 Stack 类的 foreach loop 尽然打印出来是 bottom up 的! 这不符合常理啊.并没有实现 LIFO 的输出, 要想按照 栈式 的pop输出元素,必需使用 pop才行,这样的后果就是会破坏原来栈中的数据! 要想不破坏栈,还实现栈式的LIFO的输出,需要使用 Deque 双端队列, 他既可以做栈,也可以当队列.
 
