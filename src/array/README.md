@@ -1,13 +1,15 @@
 # Array
  - [189. Rotate Array](https://leetcode.com/problems/rotate-array/#/description)
  - [61. Rotate List](https://leetcode.com/problems/rotate-list/#/description)
- - [33. Search in Rotated Sorted Array未做](https://leetcode.com/problems/search-in-rotated-sorted-array/#/description)
- - [153. Find Minimum in Rotated Sorted Array未做](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/#/description)
+ - [33. Search in Rotated Sorted Array未做](https://leetcode.com/problems/search-in-rotated-sorted-array/#/description) [source-code](../sort/SearchRotated.java)
+ - [153. Find Minimum in Rotated Sorted Array未做](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/#/description) [source-code](../sort/SearchRotated.java)
  - [440. K-th Smallest in Lexicographical Order未做](https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/#/description)
  - [牛客-左右最值最大差](https://www.nowcoder.com/practice/f5805cc389394cf69d89b29c0430ff27?tpId=49&&tqId=29359&rp=1&ru=/activity/oj&qru=/ta/2016test/question-ranking) [source-code](./MaxLeftRightDiff.java)
  - [牛客网-有一个长为n的数组A，求满足0≤a≤b<n的A[b]-A[a]的最大值。给定数组A及它的大小n，请返回最大差值。](https://www.nowcoder.com/practice/1f7675ae7a9e40e4bd04eb754b62fd00?tpId=49&tqId=29281&rp=1&ru=%2Factivity%2Foj&qru=%2Fta%2F2016test%2Fquestion-ranking&tPage=1) [source-code](./MaxDiff.java)
  - [题目：在数组中，数字减去它右边的数字得到一个数对之差。求所有数对之差的最大值。例如在数组{2, 4, 1, 16, 7, 5, 11, 9}中，数对之差的最大值是11，是16减去5的结果。](http://zhedahht.blog.163.com/blog/static/2541117420116135376632/) [source-code](./MaxDiff.java)
  - [牛客网-排序形式的相邻最大差值](https://www.nowcoder.com/practice/376ede61d9654bc09dd7d9fa9a4b0bcd?tpId=49&tqId=29366&rp=1&ru=%2Factivity%2Foj&qru=%2Fta%2F2016test%2Fquestion-ranking&tPage=5) [source-code](./MaxGapAfterOrder.java)
+ - [624. Maximum Distance in Array](https://leetcode.com/articles/maximum-distance-in-array/) [source-code](./MaxDistanceArrays.java)
+ 
  
 ## 基于排序的算法
 基于排序的算法，本质上是需要排序或者在排序的过程中计算，如果是基于比较的排序，那么他的下界可以使用决策树证明是 O(nlgn);基于比较的算法都是通过交换或者移动一次，来减少逆序数，直到逆序数消失！！一个1～n的数组，最大逆序数当然是 n(n-1)/2; 最小是0; 对于冒泡排序和插入排序，由于每次比较交换或者移动都只是减少一个逆序对，因此逆序对的数目可以通过这个两个排序过程中交换或移动次数来决定！
