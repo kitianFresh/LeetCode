@@ -5,6 +5,99 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Permutations {
+	
+	// [46. Permutations](https://leetcode.com/problems/permutations/description/)
+	public void backtrace(int[] nums, boolean[] visited, List<List<Integer>> paths, List<Integer> path) {
+        int n = nums.length;
+        if (path.size() == n) {
+            paths.add(new ArrayList<Integer>(path));
+            return;
+        }
+        for (int i = 0; i < n; i ++) {
+            if (visited[i]) continue;
+            path.add(nums[i]);
+            visited[i] = true;
+            backtrace(nums, visited, paths, path);
+            path.remove(path.size()-1);
+            visited[i] = false;
+        }
+    }
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> paths = new ArrayList<List<Integer>>();
+        List<Integer> path = new ArrayList<Integer>();
+        boolean[] visited = new boolean[nums.length];
+        backtrace(nums, visited, paths, path);
+        return paths;
+    }
+    
+    // [47. Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+    public void backtraceII(int[] nums, boolean[] visited, List<List<Integer>> paths, List<Integer> path) {
+        int n = nums.length;
+        if (path.size() == n) {
+            paths.add(new ArrayList<Integer>(path));
+            return;
+        }
+        for (int i = 0; i < n; i ++) {
+            if (visited[i]) continue;
+            if (i > 0 && nums[i] == nums[i-1] && visited[i-1]) continue;
+            path.add(nums[i]);
+            visited[i] = true;
+            backtraceII(nums, visited, paths, path);
+            path.remove(path.size()-1);
+            visited[i] = false;
+        }
+    }
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> paths = new ArrayList<List<Integer>>();
+        List<Integer> path = new ArrayList<Integer>();
+        Arrays.sort(nums);
+        boolean[] visited = new boolean[nums.length];
+        backtrace(nums, visited, paths, path);
+        return paths;
+    }
+    
+    // [31. Next Permutation](https://leetcode.com/problems/next-permutation/description/)
+    public void nextPermutation(int[] nums) {
+        int n = nums.length;
+        if (n <= 1) return;
+        int end = n - 1;
+        int first, second;
+        first = second = end;
+        for (;end>0; end --) {
+            if (nums[end] <= nums[end-1]) continue;
+            else {
+                first = end - 1;
+                break;
+            }
+        }
+        if (end==0) {
+            reverse(nums, 0, n-1);
+        }
+        end = n - 1;
+        for (;end>=0;end--) {
+            if (nums[end] > nums[first]) {
+                second = end;
+                break;
+            }
+        }
+        swap(nums, first, second);
+        reverse(nums, first+1, n-1);
+    }
+    public void reverse(int[] nums, int i, int j) {
+        int temp;
+        while (i < j) {
+            swap(nums, i, j);
+            i ++;
+            j --;
+        }
+    }
+    public void swap(int[] nums, int i, int j) {
+        int temp;
+        temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    
 	// 排列问题, 就是每个排列的长度确定了, 然后确定每个位置该选那些元素, 那些元素可以选择,那些不可以选择. 
 	// 不同元素的排列(已经选择的元素不能再选择) permute, 不同元素的全排列(选择元素可以重复选择) nbits / nchars
 	// 含有相同元素的排列(已经选择的元素不能再选择) permute II , 含有相同元素的全排列(选择元素可以重复选择)
