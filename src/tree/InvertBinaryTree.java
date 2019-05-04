@@ -3,7 +3,6 @@ package tree;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.sun.prism.impl.QueuedPixelSource;
 
 public class InvertBinaryTree {
 	// DFS, Recursive. 递归并不是效率不高，而是当压栈太深的时候会出现栈溢出的现象，使得程序不够健壮，执行时间和非递归其实不相上下！
